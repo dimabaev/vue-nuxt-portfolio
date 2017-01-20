@@ -1,0 +1,49 @@
+html,
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  background-color: #fff;
+  color: #2e2f30;
+  letter-spacing: 0.5px;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  margin: 0;
+  background: #1f1e1d url(../img/bg-crud.png) repeat-y top;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-flow: column ;
+  flex:1;
+  width: 1100px;
+  margin-bottom: 100px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+a {
+  color: #41B883;
+  text-decoration: none;
+  transition: color 0.3s;
+
+  &:hover {
+    color: var(--baseColor);
+  }
+}
+
+.logo {
+  height: 280px;
+  transform: translateX(-5px);
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity .5s
+}
+
+.page-enter,
+.page-leave-active {
+  opacity: 0
+}

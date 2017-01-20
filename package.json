@@ -1,0 +1,26 @@
+{
+  "name": "vue-start-my",
+  "version": "1.0.0",
+  "description": "Nuxt.js project",
+  "author": "dimabaev <welheor666@gmail.com>",
+  "private": true,
+  "dependencies": {
+    "nuxt": "latest",
+    "vue-material": "^0.6.3"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.6.1",
+    "normalize.css": "^5.0.0",
+    "postcss-cssnext": "^2.9.0",
+    "postcss-import": "^9.1.0",
+    "postcss-loader": "^1.2.2",
+    "postcss-nested": "^1.0.0",
+    "vuetify": "^0.8.6"
+  }
+}
