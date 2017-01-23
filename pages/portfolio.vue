@@ -118,6 +118,7 @@ export default {
                         border-top: 1px solid var(--baseColor);
                         border-bottom: 1px solid var(--baseColor);
                         color: var(--baseColor);
+                        transition: animation 0.4s;
                     }
 
                     &:hover {
@@ -137,14 +138,18 @@ export default {
         }
     }
 
+    /*анимация при ховер эффекте
+    ===============================================================
+                                                                */
     @keyframes overlaY {
         0% { 
             opacity: 0; 
-            transform: translateY(50px);     
+            transform: scale(0.5);     
         }
         100% {
             opacity: 1; 
-            transform: translateY(0px);     
+            transform: scale(1);     
         }
     }
+    
 </style>
