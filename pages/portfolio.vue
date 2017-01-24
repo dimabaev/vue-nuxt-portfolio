@@ -52,12 +52,26 @@ export default {
 </script>
 
 <style>
+
+    @custom-media --only-medium-screen (width >= 500px) and (width <= 1000px);
+
+    @media (--only-medium-screen) {
+        /* your styles */
+        .container {
+           width: 700px; 
+        }
+
+        .portfolio {
+           width: 700px; 
+        }
+    }
+    
     .title__portfolio {
         color: var(--baseColor );
     }
     .portfolio {
         dislay: flex;
-        width: 1100px;
+        /*width: 1100px;*/
         margin-bottom: 30px;
     }
     .portfolio__list {
@@ -94,7 +108,7 @@ export default {
                 .portfolio__wraper--img {
                     background-size: contain;
                     background-position: left;
-                    height: 200px;
+                    height: 180px;
                     cursor: pointer;
                 }
             }
@@ -110,6 +124,7 @@ export default {
                     z-index: 2;
                     opacity: 0;  
                     cursor: pointer;
+                    transition: animation 0.4s;
 
                     .portfolio__item--overlayName {
                         font-size: 20px;
@@ -118,11 +133,10 @@ export default {
                         border-top: 1px solid var(--baseColor);
                         border-bottom: 1px solid var(--baseColor);
                         color: var(--baseColor);
-                        transition: animation 0.4s;
                     }
 
                     &:hover {
-                        animation: overlaY 500ms ease-in-out forwards;   
+                        animation: overlaY 200ms ease-in-out forwards;   
                     }             
             }
 
@@ -151,5 +165,5 @@ export default {
             transform: scale(1);     
         }
     }
-    
+
 </style>

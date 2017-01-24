@@ -1,21 +1,28 @@
 <template>
   <section class="container">
-    <div class="wrapper__text">
-      <h1 class="title">
-        Здравствуйте. Я фронтенд-разработчик и веб-дизайнер.
-      </h1>
+    <div class="card__style">
+      <div class="wrapper__text">
+        <h1 class="title">
+          Здравствуйте. Я фронтенд-разработчик и веб-дизайнер.
+        </h1>
+      </div>
+      <div class="wrapper__p">
+        <p class="wrapper__p--text">
+          Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.
+        </p>
+      </div>
+      <ul class="list__skils">
+        <li v-for="skil in skils" class="list__skils--item">
+          {{ skil.item }}
+        </li>
+      </ul>
+      <ul class="list__socials">
+        <li v-for="social in socials" class="list__socials--item">
+          <a class="list__socials--link" v-bind:href="social.href">{{ social.item}}</a>
+        </li>
+      </ul>
+      
     </div>
-    <ul class="list__skils">
-      <li v-for="skil in skils" class="list__skils--item">
-        {{ skil.item }}
-      </li>
-    </ul>
-    <ul class="list__socials">
-      <li v-for="social in socials" class="list__socials--item">
-        <a class="list__socials--link" v-bind:href="social.href">{{ social.item}}</a>
-      </li>
-    </ul>
-    
     <div class="block__button">
       <nuxt-link class="button" to="/">
         вернуться
@@ -25,6 +32,9 @@
 </template>
 <script>
   export default {
+    components: {
+
+    },
     data () {
       return {
         name: 'abount',
@@ -45,18 +55,40 @@
   }
 </script>
 <style scoped>
+
+  .card__style {
+    display: flex;
+    flex-flow: column;
+    width: 600px;
+    background: color(rgb(31, 30, 29) lightness(20%));
+    border-radius: 3px;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 15px rgba(0,0,0,.3);
+  }
+
   .wrapper__text {
     display: flex;
     justify-content: center;
-    width: 700px;
+    width: 100%;
     text-align: center;
+    margin-top: 20px;
     margin-bottom: 20px;
+
+    .title {
+      color: #ffad15;
+      font-size: 2rem;
+    }
   }
 
-  .title {
-    color: #ffad15;
-    margin-top: 50px;
+  .wrapper__p {
+    display: flex;
+    padding: 0px 30px 10px 30px;
+    text-align: justify;
+    .wrapper__p--text {
+      color: #fff;
+    }
   }
+
 
   .info {
     font-weight: 300;
@@ -71,12 +103,12 @@
 
   .list__skils {
     display: flex;
-    width: 600px;
-    justify-content: space-between;
+    flex: 1;
+    justify-content: space-around;
+    background: color(rgb(31, 30, 29) lightness(30%));
     color: #fff;
-    padding: 15px;
-    border: 2px solid var(--baseColor);
-    border-radius: 20px;
+    padding: 0;
+    padding: 10px 0px 10px 0px;
   }
 
   .list__skils--item {
@@ -86,17 +118,17 @@
 
   .list__socials {
     display: flex;
-    width: 500px;
-    justify-content: space-between;
+    flex: 1;
+    padding: 0;
+    margin-bottom: 40px;
+    justify-content: space-around;
 
     .list__socials--item {
 
       .list__socials--link {
         width: 100px;
         display: flex;
-        height: 100px;
-        border: 2px solid;
-        border-radius: 50%;
+        height: 50px;
         color: #fff;
         justify-content: center;
         align-items: center;
@@ -104,20 +136,12 @@
         transition: .3s;
 
         &:hover {
-          border: 2px solid var(--baseColor);
           color: var(--baseColor);
-          transform: scale(1.2);
+          transform: scale(1.4) rotate(10deg);
           transition:  .3s;
         }
       }
     }
   }
 
-  .footer__a {
-    margin-right: 20px;
-  }
-
-  .footer__img {
-    width: 25px;
-  }
 </style>

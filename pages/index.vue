@@ -17,6 +17,9 @@
       <nuxt-link class="button" to="/portfolio">
         портфолио
       </nuxt-link>
+      <nuxt-link class="button" to="/contact">
+        контакты
+      </nuxt-link>
     </div>
   </section>
 </template>
